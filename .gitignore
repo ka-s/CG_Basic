@@ -1,0 +1,44 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.ilk
+*.pdb
+*.map
+Intermediate/
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+#Visual Studio project settings
+*.suo
+*.vcxproj.user
+
+#Visual Studio Intelisense
+*.sdf
+*.opensdf
+ipch/
+
+# User specific files
+__my_tools__
