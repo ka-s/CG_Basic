@@ -28,11 +28,14 @@ void Init(){
 }
 
 void Display(){
-    // ■計算
+    // 計算
     camera.EyeX = sin(3.14 * 2 / 360 * count) * 10;
     camera.EyeY = sin(3.14 * 2 / 180 * count) * 10;
 
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // Zバッファ有効化
+    glEnable(GL_DEPTH_TEST);
 
     // カメラ設定
     glLoadIdentity();
@@ -41,17 +44,24 @@ void Display(){
         camera.TarX, camera.TarY, camera.TarZ,
         0.0, 1.0, 0.0);
 
-    // ポリゴン描画
-    glBegin(GL_TRIANGLES);
-    glColor3f(1.0f, 0.0f, 0.0f);
-    glVertex3f(0.0f, 0.9f, 0.0f);
+    // 光源の設定
+    float Light0Pos[] = { 1, 1, 1, 0 };
+    glLightfv(GL_LIGHT0, GL_POSITION, Light0Pos);
 
-    glColor3f(0.0f, 1.0f, 0.0f);
-    glVertex3f(-0.9f, -0.9f, 0.0f);
+    // 球のマテリアル
+    GLfloat gold_amb[] = { 0.24725, 0.1995, 0.0745, 1.0 };
+    GLfloat gold_diff[] = { 0.75164, 0.60648, 0.22648, 1.0 };
+    GLfloat gold_spe[] = { 0.628281, 0.555802, 0.366065, 1.0 };
+    GLfloat gold_shin[] = { 51.2 };
 
-    glColor3f(0.0f, 0.0f, 1.0f);
-    glVertex3f(0.9f, -0.9f, 0.0f);
-    glEnd();
+    glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, gold_amb);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, gold_diff);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, gold_spe);
+    glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, gold_shin);
+
+    // 球描画
+    glutSolidSphere(0.5, 60, 60); // 通常
+    //glutWireSphere(0.5, 10, 10); // ワイヤーフレーム
 
     glFlush();
 
@@ -78,7 +88,7 @@ int main(int argc, char *argv[]){
     glutInit(&argc, argv);
     glutInitWindowPosition(100, 100);
     glutInitWindowSize(SIZE_X, SIZE_Y);
-    glutInitDisplayMode(GLUT_RGBA);
+    glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH);
     glutCreateWindow("My OpenGL");
 
     glutDisplayFunc(Display);
