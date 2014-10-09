@@ -28,22 +28,18 @@ void DrawCircle(double x, double y, double r, int accuracy);
 
 // ï`âÊä÷êî
 void Display(){
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     glPushMatrix();
-    // ïΩçsà⁄ìÆ
-    glTranslatef(0.0f, 0.0f, -3.0f);
+    glTranslatef(0.5f, 0.0f, 0.5f);
+    glutSolidTeapot(0.1);
+    glPopMatrix();
 
-    // É|ÉäÉSÉìï`âÊ
-    glBegin(GL_TRIANGLES);
-        glColor3f(1.0f,0.0f,0.0f);
-        glVertex2f(-0.5f, -0.5f);
-        glColor3f(0.0f, 1.0f, 0.0f);
-        glVertex2f(0.0f, 0.5);
-        glColor3f(0.0f, 0.0f, 1.0f);
-        glVertex2f(0.5f, -0.5f);
+    glPushMatrix();
+    glTranslatef(0.5f, 0.0f, 0.5f);
+    glBegin(GL_POINT);
+    glVertex3f(0.1f, 0.1f, 0.1f);
     glEnd();
-
     glPopMatrix();
 
     glFlush();
@@ -51,7 +47,7 @@ void Display(){
 
 // èâä˙ê›íËä÷êî
 void Init(char *progname){
-    glutInitDisplayMode(GLUT_RGBA);
+    glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH);
     glutInitWindowSize(SIZE_X, SIZE_Y);
     glutInitWindowPosition(SPAWN_X, SPAWN_Y);
     glutCreateWindow(progname);
