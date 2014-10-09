@@ -18,5 +18,8 @@
     <ClCompile Include="..\CGBasic\MyOpenGL.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Preparation.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
