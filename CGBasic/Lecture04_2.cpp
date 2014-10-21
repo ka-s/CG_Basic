@@ -36,9 +36,9 @@ void display() {
     glEnd();
 
     // ¡Šô‰½•ÏŠ·
-    //glTranslated(0.1, 0.2, 0.3);
-    glRotated(0, 1.0, 0.0, 0.0);
-    //glScaled(1.1, 1.2, 1.3);
+    glTranslated(0.1, 0.2, 0.3);
+    glRotated(30, 0.0, 0.0, 1.0);
+    glScaled(0.5, 0.6, 0.7);
 
     // ¡“øF(?)‚ÌŒÜŠpŒ`‚ğ•`‰æ
     glBegin(GL_POLYGON);
