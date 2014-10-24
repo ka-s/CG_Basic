@@ -2,7 +2,7 @@
 ///  CGŠî‘b‘æ4‰ñ’Ç‰Á‰Û‘è 
 /// ================================
 
-// git test 2nd.
+// git test 3rd.
 
 #include <stdio.h>
 #include <GL/glut.h>
