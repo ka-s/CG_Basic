@@ -2,6 +2,8 @@
 ///  CGŠî‘b‘æ4‰ñ’Ç‰Á‰Û‘è 
 /// ================================
 
+// I am MASTER
+
 #include <stdio.h>
 #include <GL/glut.h>
 #define KEY_ESC 27
