@@ -2,9 +2,6 @@
 ///  CGŠî‘b‘æ4‰ñ’Ç‰Á‰Û‘è 
 /// ================================
 
-// git rebase a-1.
-// git rebase a-2.
-
 #include <stdio.h>
 #include <GL/glut.h>
 #define KEY_ESC 27
