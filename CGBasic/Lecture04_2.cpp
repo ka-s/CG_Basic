@@ -2,7 +2,7 @@
 ///  CGŠî‘b‘æ4‰ñ’Ç‰Á‰Û‘è 
 /// ================================
 
-// git test 3rd.
+// git rebase a-1.
 
 #include <stdio.h>
 #include <GL/glut.h>
