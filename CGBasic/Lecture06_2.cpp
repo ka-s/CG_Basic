@@ -38,6 +38,35 @@ void display(){
     glPopMatrix();
 
     // ■車のタイヤ
+    //   後輪
+    glPushMatrix();
+    glColor3d(0.0, 0.0, 1.0);
+    glTranslated(0.5, -0.5, 0.4);
+    glScaled(0.08, 0.08, 0.08);
+    glutSolidTorus(1.0, 4.0, 32, 32);
+    glPopMatrix();
+
+    glPushMatrix();
+    glColor3d(0.0, 0.0, 1.0);
+    glTranslated(0.5, -0.5, -0.4);
+    glScaled(0.08, 0.08, 0.08);
+    glutSolidTorus(1.0, 4.0, 32, 32);
+    glPopMatrix();
+
+    //   前輪
+    glPushMatrix();
+    glColor3d(0.0, 0.0, 1.0);
+    glTranslated(-0.5, -0.5, 0.4);
+    glScaled(0.08, 0.08, 0.08);
+    glutSolidTorus(1.0, 4.0, 32, 32);
+    glPopMatrix();
+
+    glPushMatrix();
+    glColor3d(0.0, 0.0, 1.0);
+    glTranslated(-0.5, -0.5, -0.4);
+    glScaled(0.08, 0.08, 0.08);
+    glutSolidTorus(1.0, 4.0, 32, 32);
+    glPopMatrix();
 
     glDisable(GL_DEPTH_TEST);
     glFlush();
@@ -60,7 +89,7 @@ void myInit(char *progname){
     gluPerspective(60.0, aspect, 1.0, 20.0);
     // カメラの設定
     gluLookAt(
-        2.0, 0.0, 4.0,
+        2.0, 1.0, 4.0,
         0.0, 0.0, 0.0,
         0.0, 1.0, 0.0);
 }
